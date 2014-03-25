@@ -70,13 +70,13 @@ function createNewWindow(optionsDictionary) {
   optionsDictionary.bounds.width = bounds.width;
   optionsDictionary.bounds.height = bounds.height;
 
-  // Set frameOptions.
-  var frameOptions = {};
+  // Set frame.
+  var frame = {};
   if ($('#newWindowColorEnabledTrue').checked) {
-    setIfAColor(frameOptions, 'color', $('#newWindowColor').value);
+    setIfAColor(frame, 'color', $('#newWindowColor').value);
   }
-  if (Object.keys(frameOptions).length > 0)
-    optionsDictionary.frameOptions = frameOptions;
+  if (Object.keys(frame).length > 0)
+    optionsDictionary.frame= frame;
 
   chrome.app.window.create('window.html', optionsDictionary, callback);
 };

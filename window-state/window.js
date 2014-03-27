@@ -72,11 +72,10 @@ function createNewWindow(optionsDictionary) {
 
   // Set frame.
   var frame = {};
-  if ($('#newWindowColorEnabledTrue').checked) {
+  if ($('#newWindowColorEnabledTrue').checked)
     setIfAColor(frame, 'color', $('#newWindowColor').value);
-  }
   if (Object.keys(frame).length > 0)
-    optionsDictionary.frame= frame;
+    optionsDictionary.frame = frame;
 
   chrome.app.window.create('window.html', optionsDictionary, callback);
 };
